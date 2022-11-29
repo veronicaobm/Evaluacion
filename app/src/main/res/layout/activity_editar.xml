@@ -1,146 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_fondo"
+    android:background="@color/fondo"
     android:orientation="vertical"
-    tools:context=".Editar">
+    android:stretchColumns="3"
+    tools:context=".MainActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="EDITAR CONTACTO"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        android:text="ACTUALIZAR CONTACTO"
+        android:textSize="25dp"
+        android:textStyle="bold"
         />
 
-    <TextView
-        android:id="@+id/tvDatos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"
-        android:text="Nombre nuevo:"
-        android:textColor="@color/white"
-        />
 
-    <EditText
-        android:id="@+id/EditarNombre"
+    <TableRow>
+        <ImageView
+            android:layout_column="0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/nombre" />
+
+        <TextView
+            android:layout_column="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Nombre: "
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            />
+
+        <EditText
+            android:layout_column="3"
+            android:id="@+id/nombre_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <ImageView
+            android:layout_column="0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/telefono" />
+
+        <TextView
+            android:layout_column="1"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:text="Telefono nuevo: "
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            />
+
+        <EditText
+            android:layout_column="3"
+            android:id="@+id/telefono_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:hint="9 digitos"
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <ImageView
+            android:layout_column="0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/direccion" />
+
+        <TextView
+            android:layout_column="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Dirección nueva: "
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            />
+
+        <EditText
+            android:layout_column="3"
+            android:id="@+id/direccion_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:hint="Calle 123"
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <ImageView
+            android:layout_column="0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/correo" />
+
+        <TextView
+            android:layout_column="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Correo nuevo: "
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            />
+
+        <EditText
+            android:layout_column="3"
+            android:id="@+id/correo_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:hint="correo@ejemplo.cl"
+            />
+
+    </TableRow>
+
+
+    <Button
+        android:id="@+id/btnEditarOk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/white"
+        android:text="Editar"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/morado"
+        android:textColor="@color/gris"
 
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Telefono nuevo:"
-        android:textColor="@color/white"
-        />
-
-    <EditText
-        android:id="@+id/EditarTelefono"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/white"
-        android:hint="9 dígitos"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Direccion nueva:"
-        android:textColor="@color/white"
-        />
-
-    <EditText
-        android:id="@+id/EditarDireccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/white"
-        android:hint="Calle 123"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Correo Nuevo:"
-        android:textColor="@color/white"
-        />
-
-    <EditText
-        android:id="@+id/EditarCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/white"
-        android:hint="correo@ejemplo.com"
         />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnEliminarEditar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Actualizar contacto"
-        android:backgroundTint="@color/verde"
-        />
+        android:text="Eliminar por nombre"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/morado"
+        android:textColor="@color/gris"
 
+        />
     <Button
-        android:id="@+id/btnEliminarContacto"
+        android:id="@+id/btnVolverEditar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Eliminar contacto"
-        android:backgroundTint="@color/verde"
-        />
+        android:text="Volver"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/morado"
+        android:textColor="@color/gris"
 
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Volver a agenda"
-        android:backgroundTint="@color/verde"
         />
 
 
-</LinearLayout>
+</TableLayout>

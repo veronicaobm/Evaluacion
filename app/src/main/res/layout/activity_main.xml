@@ -1,43 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_fondo"
+    android:background="@color/fondo"
     android:orientation="vertical"
+    android:layout_column="3"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/agenda"
-        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AGENDA"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:text="AGENDA TELEFÓNICA"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         />
 
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/agenda1" />
+
+    <TableRow>
+        <TextView
+            android:layout_height="20dp"
+            android:layout_column="0"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:text="Nombre: "
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_column="1"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:width="120dp"
+            android:height="25dp"
+            android:background="@color/white" />
+
+        <Button
+            android:layout_column="2"
+            android:id="@+id/btnBuscarContacto"
+            android:width="95dp"
+            android:height="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Buscar"
+            android:backgroundTint="@color/morado"
+            android:textColor="@color/gris"
+            />
+
+        <Button
+            android:layout_column="3"
+            android:id="@+id/btnEliminar"
+            android:width="95dp"
+            android:height="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Borrar"
+            android:backgroundTint="@color/morado"
+            android:textColor="@color/gris"
+            />
+
+    </TableRow>
+
+
     <Button
-       android:id="@+id/btnVerContactos"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Ver contactos"
-       android:layout_gravity="center"
-       android:layout_marginTop="70dp"
-       android:layout_marginLeft="30dp"
-       android:layout_marginRight="30dp"
-       android:backgroundTint="@color/verde"
-       />
+        android:id="@+id/btnVerContactos"
+        android:layout_width="99dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="90dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:backgroundTint="@color/morado"
+        android:text="Ver Agenda"
+        android:textColor="@color/gris" />
 
     <Button
         android:id="@+id/btnAgregarContacto"
@@ -45,14 +95,43 @@
         android:layout_height="wrap_content"
         android:text="Agregar contacto"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:backgroundTint="@color/verde"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/morado"
+        android:textColor="@color/gris"
+
+        />
+
+    <Button
+        android:id="@+id/btnEditarContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Editar contacto"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/morado"
+        android:textColor="@color/gris"
         />
 
 
 
+    <Button
+        android:id="@+id/btnUbicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ubicación"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/morado"
+        android:textColor="@color/gris"
+        android:layout_marginBottom="50dp"
+        />
 
 
-</LinearLayout>
+
+</TableLayout>

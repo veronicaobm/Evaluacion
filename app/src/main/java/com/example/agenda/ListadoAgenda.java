@@ -6,16 +6,19 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.agenda.contacto.Contactos;
+import com.example.agenda.contacto.DatabaseHelper;
 import com.example.agenda.contacto.ListaContactos;
 
 import java.util.ArrayList;
 
 public class ListadoAgenda extends ListActivity {
     ListView agenda;
+    DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +28,21 @@ public class ListadoAgenda extends ListActivity {
 
     public void cargarAgenda(){
         agenda = getListView();
-        ArrayList<Contactos> contactos = ListaContactos.getInstancia().getListaContactos();
-        ArrayAdapter<Contactos> listaAdapter = new ArrayAdapter<Contactos>(this, android.R.layout.simple_list_item_1, contactos);
+        ArrayList<Contactos> contactos = helper.ListaContactos();
+        ArrayAdapter<Contactos> listaAdapter = new ArrayAdapter<Contactos>(
+                this, android.R.layout.simple_list_item_1, contactos);
         agenda.setAdapter(listaAdapter);
-    }
-
-    @Override
-    public void onListItemClick(ListView listView, View view, int posicion, long id){
-        Intent intent = new Intent(ListadoAgenda.this, Detalles.class);
-        intent.putExtra("idContactos", (int)id);
-        startActivityForResult(intent, 1);
+        agenda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Object obj = agenda.getItemAtPosition(i);
+                String linea = obj.toString();
+                String[] separar = linea.split(":");
+                Intent intent = new Intent(ListadoAgenda.this, Detalles.class);
+                intent.putExtra("nombreContacto", separar[0]);
+                startActivityForResult(intent, 1);
+            }
+        });
     }
 
     @Override
